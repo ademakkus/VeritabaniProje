@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="~/css/custom.css" rel="stylesheet" type="text/css" />
+      <link type="text/css" rel="stylesheet" href="~/css/materialize.min.css"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AFET VE ACİL DURUM KYS</title>
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="row">
+    <div class="col s12">
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo" style="padding-left: 30px;">AFET VE ACİL DURUM KAYNAK YÖNETİM SİSTEMİ</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><asp:HyperLink ID="Logout" runat="server" NavigateUrl="~/Logout.aspx"><i class="material-icons">power_settings_new</i></asp:HyperLink></li>
+      </ul>
+    </div>
+  </nav>
+    </div>
+</div>
+
+    <div class="row">
+      <div class="col s3 m3 l3" id="solmenu">
+      <ul class="collapsible" data-collapsible="accordion">
+      <li>
+      <div class="collapsible-header waves-effect waves-default">
+      <i class="material-icons">home</i><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx" CssClass="grey-text text-darken-3">Anasayfa</asp:HyperLink>
+            </div>
+      </li>
+    <li>
+      <div class="waves-effect waves-green collapsible-header"><i class="material-icons">input</i>Afet Öncesi Yönetimi</div>
+      <div class="collapsible-body">
+          <div class="collection">
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetOncesi/PersonelYonetimi.aspx" CssClass="collection-item">Personel Yönetimi</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetOncesi/KurumlarYonetimi.aspx" CssClass="collection-item">Partner Kurumlar Yönetimi</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetOncesi/EkipmanYonetimi.aspx" CssClass="collection-item">Ekipman Yönetimi</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetOncesi/MotorluAraclarYonetimi.aspx" CssClass="collection-item">Motorlu Araçlar Yönetimi</asp:HyperLink>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="waves-effect waves-red collapsible-header"><i class="material-icons">whatshot</i>Afet Anı Yönetimi</div>
+      <div class="collapsible-body">
+      <div class="collection">
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetAni/OlayYonetimi.aspx" CssClass="collection-item">Olay Yönetimi</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetAni/IhbarYonetimi.aspx" CssClass="collection-item">İhbar Yönetimi</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetAni/IaseKaynakYonetimi.aspx" CssClass="collection-item">İaşe Kaynak Yönetimi</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetAni/BarinmaKaynakYonetimi.aspx" CssClass="collection-item">Barınma Kaynak Yönetimi</asp:HyperLink>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="waves-effect waves-yellow collapsible-header"><i class="material-icons">track_changes</i>Afet Sonrası Yönetimi</div>
+      <div class="collapsible-body">
+       <div class="collection">
+        <asp:HyperLink runat="server" NavigateUrl="~/AfetSonrasi/BagisYonetimi.aspx" CssClass="collection-item">Bağış Yönetimi</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl="~/AfetSonrasi/AfetzedeBilgiYonetimi.aspx" CssClass="collection-item">Psikolojik Destek Yönetimi</asp:HyperLink>
+        </div>
+      </div>
+    </li>
+  </ul>
+  </div>
+      
+      <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+    </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    
+        <Scripts>
+      <asp:ScriptReference Path="~/js/jquery-2.1.1.min.js" />
+      <asp:ScriptReference Path="~/js/materialize.min.js"/>
+      <asp:ScriptReference Path="~/js/custom.js"/>
+        </Scripts>
+    </asp:ScriptManager>
+    </form>
+      
+</body>
+</html>
