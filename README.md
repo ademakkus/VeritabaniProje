@@ -1,0 +1,2 @@
+# VeritabaniProje
+Veritabanı Dersi Projesi
